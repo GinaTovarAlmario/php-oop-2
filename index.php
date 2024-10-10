@@ -10,6 +10,10 @@
 // e creare un account per ricevere cosi il 20% di sconto.
 // Il cliente effettua il pagamento dei prodotti nel carrello con la carta di credito, che non deve essere scaduta.
 
+    require_once __DIR__ . "/classes/prodotto.php";
+    require_once __DIR__ . "/classes/cuccia.php";
+    require_once __DIR__ . "/classes/cibo.php";
+    require_once __DIR__ . "/classes/gioco.php";
 
 
 ?>
@@ -29,16 +33,16 @@
     <main class="container">
         <div class="row">
             <div class="col-12 text-center mt-3">
-                <h1>PHP OOP 2 </h1>
+                <h1>PHP OOP 2 : Ereditarietà</h1>
             </div>
             <div class="col">
                 <div class="card mt-3" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <p class="card-text">
+
+                        </p>
                     </div>
                 </div>
             </div>
