@@ -11,8 +11,7 @@
             string $immagine, 
             string $titolo, 
             float $prezzo, 
-            string $icona_della_categoria, 
-            string $tipo_articolo_visualizzato,
+            Categoria $categoria, 
             bool $glutenfree,
             bool $monoprotein,
             string $tipo_imballaggio,
@@ -23,12 +22,8 @@
                 $immagine, 
                 $titolo, 
                 $prezzo, 
-                $icona_della_categoria, 
+                $categoria, 
                 "Cibo",
-                $glutenfree,
-                $monoprotein,
-                $tipo_imballaggio,
-                $lowincalories,
             );
             $this->glutenfree = $glutenfree;
             $this->monoprotein = $monoprotein;

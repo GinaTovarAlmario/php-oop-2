@@ -14,7 +14,20 @@
     require_once __DIR__ . "/classes/cuccia.php";
     require_once __DIR__ . "/classes/cibo.php";
     require_once __DIR__ . "/classes/gioco.php";
+    require_once __DIR__ . "/classes/categoria.php";
+    require_once __DIR__ . "/classes/gatto.php";
+    require_once __DIR__ . "/classes/cane.php";
 
+    
+
+    $target_img = "https://m.media-amazon.com/images/I/71hK+WBbldL._AC_UF894,1000_QL80_.jpg";
+    $target_titolo= "softy";
+    $target_prezzo = 30;
+    $target_categoria = new Gatto();
+    $target_materiale = "cotone";
+    $target_dimensione = "30x30";
+
+    $cuccia = new Cuccia($target_img,$target_titolo,$target_prezzo,$target_categoria,$target_materiale,$target_dimensione);
 
 ?>
 <!DOCTYPE html>
@@ -36,12 +49,12 @@
                 <h1>PHP OOP 2 : Ereditarietà</h1>
             </div>
             <div class="col">
-                <div class="card mt-3" style="width: 18rem;">
+                <div class="card mt-3">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
                         <p class="card-text">
-
+                            <?= var_dump($cuccia) ?>
                         </p>
                     </div>
                 </div>

@@ -9,13 +9,12 @@
         public $impermeabilità;
         public  $climatePledgeFriendly;
         public $pfasFree;
-        
+
         public function __construct(
             string $immagine, 
             string $titolo, 
             float $prezzo, 
-            string $icona_della_categoria, 
-            string $tipo_articolo_visualizzato,
+            Categoria $categoria, 
             string $materiale,
             float $peso,
             string $dimensione,
@@ -29,14 +28,8 @@
                 $immagine, 
                 $titolo, 
                 $prezzo, 
-                $icona_della_categoria, 
+                $categoria, 
                 "Gioco",
-                $materiale,
-                $peso,
-                $dimensione,
-                $impermeabilità,
-                $climatePledgeFriendly,
-                $pfasFree,
             );
             $this->materiale = $materiale;
             $this->peso = $peso;

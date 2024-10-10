@@ -9,8 +9,7 @@
             string $immagine, 
             string $titolo, 
             float $prezzo, 
-            string $icona_della_categoria, 
-            string $tipo_articolo_visualizzato,
+            Categoria $categoria, 
             string $materiale,
             string $dimensione,
             )
@@ -19,8 +18,9 @@
                 $immagine, 
                 $titolo, 
                 $prezzo, 
-                $icona_della_categoria, 
+                $categoria,
                 "Cuccia",
+
             );
             $this->materiale = $materiale;
             $this->dimensione = $dimensione;
