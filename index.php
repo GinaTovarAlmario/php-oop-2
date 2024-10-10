@@ -18,17 +18,16 @@
     require_once __DIR__ . "/classes/gatto.php";
     require_once __DIR__ . "/classes/cane.php";
 
-    
 
-    $target_img = "https://m.media-amazon.com/images/I/71hK+WBbldL._AC_UF894,1000_QL80_.jpg";
-    $target_titolo= "softy";
-    $target_prezzo = 30;
-    $target_categoria = new Gatto();
-    $target_materiale = "cotone";
-    $target_dimensione = "30x30";
-
-    $cuccia = new Cuccia($target_img,$target_titolo,$target_prezzo,$target_categoria,$target_materiale,$target_dimensione);
-
+    // creo un array
+    $listaProdotti = [
+        new Cuccia("https://www.dmail.it/on/demandware.static/-/Sites-dret-catalog/default/dw049ed900/images_dmail/large/509619l.jpg","Cuccia a pelo lungo",90.00,new Cane(),"poliestere","50x18 cm"),
+        new Cibo("https://www.brekz.it/44262/large_default.jpg","Royal canin Instictive",2.50,new Gatto(),true,false,"Confezione bustine",true),
+        new Gioco("https://dogecatmegastore.com/upload/immagini_prodotto/285/AD090-B_39_1.jpg","Pallina",10.20,new Cane(),"Gomma",1.2,"72mm",true,true,true),
+        new Gioco("https://www.dmail.it/on/demandware.static/-/Sites-dret-catalog/default/dw719c0a68/images_dmail/large/509459l_1.jpg","Pesca l'esca",29.90,new Gatto(),"pp",0.27,"40cm",false,true,true),
+        new Cibo("https://www.hipetcare.it/wp-content/uploads/2022/03/HI-FISH-Adult-12-kg-16095x360-1-800x800.png","Hi Fish low calories",69.90,new Cane(),true,true,"Sacchetto 1.2Kg",true),
+        new Cuccia("https://www.ibs.it/images/8052575820844_0_536_0_75.jpg","Navicella",56.50,new Gatto(),"cotone e poliestere","39 x 37 x 30 cm"),
+    ];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,30 +36,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ginatovaralmario">
     <meta name="project" content="php8-reditarietà">
-    <title>Document</title>
+    <title>ArcaBoolean</title>
+
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- style -->
+    <link rel="stylesheet" href="/style/style.css">
 </head>
 <body>
-    <main class="container">
+    <header class="container-fluid">
         <div class="row">
-            <div class="col-12 text-center mt-3">
+            <div class="col-12 text-center bg-warning">
                 <h1>PHP OOP 2 : Ereditarietà</h1>
             </div>
-            <div class="col">
-                <div class="card mt-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                        <p class="card-text">
-                            <?= var_dump($cuccia) ?>
-                        </p>
-                    </div>
-                </div>
-            </div>
         </div>
-
+    </header>
+    <main class="container-fluid bg-dark">
+        <section class="container">
+            <div class="row">
+                <?php foreach( $listaProdotti as $listItem){?>
+                    <div class="col-4">
+                        <div class="card mt-4 mb-4 box">
+                            <img src="<?=$listItem->getImg()?>" class="card-img-top img-card" alt="<?=$listItem->getTitle();?>">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Titolo: <?= $listItem->getTitle(); ?>
+                                </h5>
+                                <p class="card-text">
+                                    Prezzo: <?= $listItem->getPrice(); ?>
+                                </p>
+                                <p class="card-text">
+                                    Categoria: <?= $listItem->$categoria ?>
+                                </p>
+                                <p class="card-text">
+                                    Tipo: <?=$listItem->getType();?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <?php }?>
+            </div>
+        </section>
     </main>
 </body>
 </html>

@@ -26,5 +26,13 @@
             $this->dimensione = $dimensione;
         }
 
+        public function getMaterial(){
+            return $this->materiale;
+        }
+        public function getSize(){
+            return $this->dimensione;
+        }
+
+
     }
 ?>

@@ -22,5 +22,23 @@
             $this->tipo_articolo_visualizzato = $tipo_articolo_visualizzato;
         }
 
+        public function getImg(){
+            return $this->immagine;
+        }
+        public function getTitle(){
+            return $this->titolo;
+        }
+        public function getPrice(){
+            return $this->prezzo . "€";
+        }
+        public function getCategory(){
+            return $this->categoria;
+        }
+        public function getType(){
+            return $this->tipo_articolo_visualizzato;
+        }
+        
+
     }
+
 ?>

@@ -30,6 +30,20 @@
             $this->tipo_imballaggio = $tipo_imballaggio;
             $this->lowincalories = $lowincalories;
         }
+
+        public function getImg(){
+            return $this->glutenfree;
+        }
+        public function getMonoProtein(){
+            return $this->monoprotein;
+        }
+        public function getTypeImbInfo(){
+            return $this->tipo_imballaggio;
+        }
+        public function getLowCalInfo(){
+            return $this->lowincalories;
+        }
+
     }
 
 

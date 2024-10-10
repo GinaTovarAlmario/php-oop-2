@@ -38,5 +38,28 @@
             $this->climatePledgeFriendly = $climatePledgeFriendly;
             $this->pfasFree = $pfasFree;
         }
+
+        public function getImg(){
+            return $this->materiale;
+        }
+        public function getPeso(){
+            return $this->peso;
+        }
+        public function getDimensione(){
+            return $this->dimensione;
+        }
+        public function getImpermeabilità(){
+            return $this->impermeabilità;
+        }
+        public function getClimatePledgeFriendly(){
+            return $this->climatePledgeFriendly;
+        }
+        public function getPfasFree(){
+            return $this->pfasFree;
+        }
+       
+
+
+
     }
 ?>
