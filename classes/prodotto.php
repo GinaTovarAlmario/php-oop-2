@@ -63,9 +63,7 @@
         public function getAdditionalInfo() : string {
             return "";
         }
-        public function formatBooleanValue( bool $boolValue) : string {
-            return ($boolValue) ? 'Si' : 'No';
-        }
+       
     }
 
 ?>

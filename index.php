@@ -82,7 +82,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ginatovaralmario">
-    <meta name="project" content="php8-reditarietà">
+    <meta name="project" content="php8-ereditarietà">
     <title>ArcaBoolean</title>
 
     <!-- bootstrap -->
