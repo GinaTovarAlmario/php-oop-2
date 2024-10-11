@@ -116,8 +116,12 @@
                                 </p>
                                 <div>
                                     <h5>Categoria: </h5>
-                                    <img class="img-icon" src="<?=$listItem->getCategoria()->getFavIcon()?>" alt="<?=$listItem-> getCategoria()->getName()?>">
+                                    <img class="img-icon" src="<?=$listItem->getCategoria()->getFavIcon();?>" alt="<?=$listItem-> getCategoria()->getName();?>">
                                  </div>
+                                <div class="mt-3">
+                                    <h5>Descrizione: </h5>
+                                    <?=$listItem->getAdditionalInfo();?>
+                                </div>
                             </div>
                         </div>
                     </div>

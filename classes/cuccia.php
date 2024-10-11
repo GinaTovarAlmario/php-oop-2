@@ -26,5 +26,8 @@
             $this->dimensione = $dimensione;
         }
         
+        public function getAdditionalInfo() : string {
+            return $this->materiale . $this->dimensione;
+        }
     }
 ?>
