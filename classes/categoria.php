@@ -2,21 +2,14 @@
     require_once __DIR__ . "/prodotto.php";
 
     class Categoria {
+        public string $titolo;
+        public string $iconaUrl;
 
-        public $icona;
-
-        public function __construct(string $icona)
+        public function __construct(string $titolo,string $iconaUrl)
         {
-            $this->icona = $icona;
+            $this->titolo = $titolo;
+            $this->iconaUrl = $iconaUrl;
         }
-
-        //   //mmmm da rivedere
-        //   public function getCategory(){
-        //     if($categoria == new Gatto()){
-        //         return $icona);
-
-        //     }
-        // }
 
 
     }

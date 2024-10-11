@@ -4,7 +4,7 @@
 
         //! Queste sono le variabili di istanza 
         // aggiungiamo incapsulamento
-        
+
         private string $immagine;
         private string $titolo;
         private float $prezzo;
@@ -38,7 +38,7 @@
             return $this->titolo;
         }
     
-        public function setTitolo(string $titolo): void {
+        private function setTitolo(string $titolo): void {
             $this->titolo = $titolo;
         }
     
