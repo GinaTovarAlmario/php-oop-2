@@ -32,5 +32,12 @@
             $this->impermeabilità =$impermeabilità;
         }
 
+        public function getAdditionalInfo() : string {
+            return "<ul><li> Materiale : {$this->materiale}</li>
+                        <li> Peso : {$this->peso} kg</li>
+                        <li> Dimensione : {$this->dimensione}</li>
+                        <li> Impermeabilità : {$this->formatBooleanValue($this->impermeabilità)}</li>
+                    </ul>";
+        }
     }
 ?>

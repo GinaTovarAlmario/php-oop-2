@@ -27,7 +27,9 @@
         }
         
         public function getAdditionalInfo() : string {
-            return $this->materiale . $this->dimensione;
+            return "<ul><li> Materiale : {$this->materiale}</li>
+                        <li> Dimensione : {$this->dimensione}</li>
+                    </ul>";
         }
     }
 ?>
