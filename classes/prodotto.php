@@ -2,10 +2,13 @@
     require_once __DIR__ . "/categoria.php";
     class Prodotto {
 
-        public string $immagine;
-        public string $titolo;
-        public float $prezzo;
-        public Categoria $categoria;
+        //! Queste sono le variabili di istanza 
+        // aggiungiamo incapsulamento
+        
+        private string $immagine;
+        private string $titolo;
+        private float $prezzo;
+        private Categoria $categoria;
 
         public function __construct(
             string $immagine, 
@@ -20,17 +23,41 @@
             $this->categoria = $categoria;
         }
 
-        public function getImg(){
+        // devo creare dei metodi getter and setter per ogni variabile
+
+        public function getImmagine(): string {
             return $this->immagine;
         }
-        public function getTitle(){
+    
+        public function setImmagine(string $immagine): void {
+            $this->immagine = $immagine;
+        }
+    
+        // Getter e Setter per titolo
+        public function getTitolo(): string {
             return $this->titolo;
         }
-        public function getPrice(){
-            return $this->prezzo . "€";
+    
+        public function setTitolo(string $titolo): void {
+            $this->titolo = $titolo;
         }
-        public function getCategory(){
+    
+        // Getter e Setter per prezzo
+        public function getPrezzo(): float {
+            return $this->prezzo;
+        }
+    
+        public function setPrezzo(float $prezzo): void {
+            $this->prezzo = $prezzo;
+        }
+    
+        // Getter e Setter per categoria
+        public function getCategoria(): Categoria {
             return $this->categoria;
+        }
+    
+        public function setCategoria(Categoria $categoria): void {
+            $this->categoria = $categoria;
         }
         
 
