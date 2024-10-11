@@ -1,8 +1,13 @@
 <?php
     require_once __DIR__ . "/categoria.php";
+    require_once __DIR__ . "/../traits/formatting.php";
     class Prodotto {
 
+        // dichiaro l'uso del trait
+        use formatting;
+
         //! Queste sono le variabili di istanza 
+
         // aggiungiamo incapsulamento
 
         private string $immagine;
@@ -44,7 +49,7 @@
     
         // Getter e Setter per prezzo
         public function getPrezzo(): string {
-            return $this->prezzo ."€";
+            return $this->formatPrice($this->prezzo);
         }
     
         public function setPrezzo(float $prezzo): void {

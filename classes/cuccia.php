@@ -1,9 +1,10 @@
 <?php 
     // vado a prendere quello che chiamo nel codice
     require_once __DIR__ . "/prodotto.php";
-
     class Cuccia extends Prodotto{
+
         //! ho ereditato tutte le proprietà e le capacità della classe Prodotto
+
         public $materiale;
         public $dimensione;
 
