@@ -28,7 +28,7 @@
             $this->lowincalories = $lowincalories;
         }
         public function getAdditionalInfo() : string {
-            return "<ul><li> Monoproteina : {$this->formatBooleanValue($this->monoprotein)}</li>
+            return "<ul class =\"list-unstyled\"><li> Monoproteina : {$this->formatBooleanValue($this->monoprotein)}</li>
                         <li>Tipo Imballaggio : {$this->tipo_imballaggio}</li>
                         <li>Low in Calories : {$this->formatBooleanValue($this->lowincalories)}</li>
                     </ul>";

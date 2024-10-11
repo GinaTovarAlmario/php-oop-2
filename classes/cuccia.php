@@ -27,7 +27,7 @@
         }
         
         public function getAdditionalInfo() : string {
-            return "<ul><li> Materiale : {$this->materiale}</li>
+            return "<ul class =\"list-unstyled\"><li> Materiale : {$this->materiale}</li>
                         <li> Dimensione : {$this->dimensione}</li>
                     </ul>";
         }
