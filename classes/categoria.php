@@ -10,5 +10,14 @@
             $this->icona = $icona;
         }
 
+        //   //mmmm da rivedere
+        //   public function getCategory(){
+        //     if($categoria == new Gatto()){
+        //         return $icona);
+
+        //     }
+        // }
+
+
     }
 ?>

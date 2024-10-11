@@ -21,12 +21,65 @@
 
     // creo un array
     $listaProdotti = [
-        new Cuccia("https://www.dmail.it/on/demandware.static/-/Sites-dret-catalog/default/dw049ed900/images_dmail/large/509619l.jpg","Cuccia a pelo lungo",90.00,new Cane(),"poliestere","50x18 cm"),
-        new Cibo("https://www.brekz.it/44262/large_default.jpg","Royal canin Instictive",2.50,new Gatto(),true,false,"Confezione bustine",true),
-        new Gioco("https://dogecatmegastore.com/upload/immagini_prodotto/285/AD090-B_39_1.jpg","Pallina",10.20,new Cane(),"Gomma",1.2,"72mm",true,true,true),
-        new Gioco("https://www.dmail.it/on/demandware.static/-/Sites-dret-catalog/default/dw719c0a68/images_dmail/large/509459l_1.jpg","Pesca l'esca",29.90,new Gatto(),"pp",0.27,"40cm",false,true,true),
-        new Cibo("https://www.hipetcare.it/wp-content/uploads/2022/03/HI-FISH-Adult-12-kg-16095x360-1-800x800.png","Hi Fish low calories",69.90,new Cane(),true,true,"Sacchetto 1.2Kg",true),
-        new Cuccia("https://www.ibs.it/images/8052575820844_0_536_0_75.jpg","Navicella",56.50,new Gatto(),"cotone e poliestere","39 x 37 x 30 cm"),
+        new Cuccia(
+            "https://www.dmail.it/on/demandware.static/-/Sites-dret-catalog/default/dw049ed900/images_dmail/large/509619l.jpg",
+            "Cuccia a pelo lungo",
+            90.00,
+            new Cane(),
+            "poliestere",
+            "50x18 cm"
+        ),
+        new Cibo(
+            "https://www.brekz.it/44262/large_default.jpg","Royal canin Instictive",
+            2.50,
+            new Gatto(),
+            true,
+            false,
+            "Confezione bustine",
+            true
+        ),
+        new Gioco(
+            "https://dogecatmegastore.com/upload/immagini_prodotto/285/AD090-B_39_1.jpg",
+            "Pallina",
+            10.20,
+            new Cane(),
+            "Gomma",
+            1.2,
+            "72mm",
+            true,
+            true,
+            true
+        ),
+        new Gioco(
+            "https://www.dmail.it/on/demandware.static/-/Sites-dret-catalog/default/dw719c0a68/images_dmail/large/509459l_1.jpg",
+            "Pesca l'esca",
+            29.90,
+            new Gatto(),
+            "pp",
+            0.27,
+            "40cm",
+            false,
+            true,
+            true
+        ),
+        new Cibo(
+            "https://www.hipetcare.it/wp-content/uploads/2022/03/HI-FISH-Adult-12-kg-16095x360-1-800x800.png",
+            "Hi Fish low calories",
+            69.90,
+            new Cane(),
+            true,
+            true,
+            "Sacchetto 1.2Kg",
+            true
+        ),
+        new Cuccia(
+            "https://www.ibs.it/images/8052575820844_0_536_0_75.jpg",
+            "Navicella",
+            56.50,
+            new Gatto(),
+            "cotone e poliestere",
+            "39 x 37 x 30 cm"
+        ),
     ];
 ?>
 <!DOCTYPE html>
@@ -69,9 +122,6 @@
                                 </p>
                                 <p class="card-text">
                                     Categoria: <?= $listItem->$categoria ?>
-                                </p>
-                                <p class="card-text">
-                                    Tipo: <?=$listItem->getType();?>
                                 </p>
                             </div>
                         </div>

@@ -7,8 +7,6 @@
         public $peso;
         public $dimensione;
         public $impermeabilità;
-        public  $climatePledgeFriendly;
-        public $pfasFree;
 
         public function __construct(
             string $immagine, 
@@ -19,8 +17,6 @@
             float $peso,
             string $dimensione,
             bool $impermeabilità,
-            bool  $climatePledgeFriendly,
-            bool $pfasFree,
 
             )
         {
@@ -35,31 +31,20 @@
             $this->peso = $peso;
             $this->dimensione = $dimensione;
             $this->impermeabilità =$impermeabilità;
-            $this->climatePledgeFriendly = $climatePledgeFriendly;
-            $this->pfasFree = $pfasFree;
         }
 
-        public function getImg(){
+        public function getImgGioco(){
             return $this->materiale;
         }
-        public function getPeso(){
+        public function getPesoGioco(){
             return $this->peso;
         }
-        public function getDimensione(){
+        public function getDimensioneGioco(){
             return $this->dimensione;
         }
         public function getImpermeabilità(){
             return $this->impermeabilità;
         }
-        public function getClimatePledgeFriendly(){
-            return $this->climatePledgeFriendly;
-        }
-        public function getPfasFree(){
-            return $this->pfasFree;
-        }
-       
-
-
 
     }
 ?>

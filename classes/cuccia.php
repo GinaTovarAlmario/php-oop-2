@@ -19,7 +19,6 @@
                 $titolo, 
                 $prezzo, 
                 $categoria,
-                "Cuccia",
 
             );
             $this->materiale = $materiale;
@@ -32,6 +31,7 @@
         public function getSize(){
             return $this->dimensione;
         }
+        
 
 
     }
