@@ -1,6 +1,4 @@
 <?php
-    require_once __DIR__ . "/prodotto.php";
-
     class Categoria {
         public string $titolo;
         public string $iconaUrl;

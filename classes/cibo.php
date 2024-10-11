@@ -2,9 +2,10 @@
     require_once __DIR__ . "/prodotto.php";
 
     class Cibo extends Prodotto{
-        public $monoprotein;
-        public $tipo_imballaggio;
-        public $lowincalories;
+
+        public bool $monoprotein;
+        public string $tipo_imballaggio;
+        public bool $lowincalories;
         
         public function __construct(
             string $immagine, 
@@ -25,15 +26,6 @@
             $this->monoprotein = $monoprotein;
             $this->tipo_imballaggio = $tipo_imballaggio;
             $this->lowincalories = $lowincalories;
-        }
-        public function getMonoProtein(){
-            return $this->monoprotein;
-        }
-        public function getTypeImbInfo(){
-            return $this->tipo_imballaggio;
-        }
-        public function getLowCalInfo(){
-            return $this->lowincalories;
         }
 
     }
