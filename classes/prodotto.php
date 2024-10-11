@@ -1,6 +1,11 @@
 <?php
     require_once __DIR__ . "/categoria.php";
     require_once __DIR__ . "/../traits/formatting.php";
+
+    // dichiaro la classe per usare exception
+
+    class valoriNonValidi extends Exception {}
+
     class Prodotto {
 
         // dichiaro l'uso del trait
@@ -20,21 +25,27 @@
             string $titolo, 
             float $prezzo, 
             Categoria $categoria, 
-            )
-        {
+
+        )   {
+            // Controllo che i parametri non siano vuoti o non validi
+            if (empty($immagine) || empty($titolo) || $prezzo <= 0) {
+                throw new valoriNonValidi("Valori non validi forniti al costruttore del Prodotto");
+            }
+
             $this->immagine = $immagine;
             $this->titolo = $titolo;
             $this->prezzo = $prezzo;
             $this->categoria = $categoria;
         }
-
         // devo creare dei metodi getter and setter per ogni variabile
-
         public function getImmagine(): string {
             return $this->immagine;
         }
     
         public function setImmagine(string $immagine): void {
+            if (empty($immagine)) {
+                throw new valoriNonValidi("L'immagine non può essere vuota.");
+            }
             $this->immagine = $immagine;
         }
     
@@ -44,6 +55,9 @@
         }
     
         private function setTitolo(string $titolo): void {
+            if (empty($titolo)) {
+                throw new valoriNonValidi("Il titolo non può essere vuoto.");
+            }
             $this->titolo = $titolo;
         }
     
@@ -53,6 +67,9 @@
         }
     
         public function setPrezzo(float $prezzo): void {
+            if ($prezzo <= 0) {
+                throw new valoriNonValidi("Il prezzo deve essere maggiore di zero.");
+            }
             $this->prezzo = $prezzo;
         }
     
@@ -69,6 +86,14 @@
             return "";
         }
        
+    }
+     // Esempio di utilizzo con gestione delle eccezioni
+     $errori;
+     try {
+        $categoria = new Categoria("elefante","");
+        $prodotto = new Prodotto("", "Smartphone", -20, $categoria);
+    } catch ( valoriNonValidi $e) {
+        $errori = $e->getMessage();
     }
 
 ?>

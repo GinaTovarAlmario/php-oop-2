@@ -126,6 +126,11 @@
                         </div>
                     </div>
                 <?php }?>
+                <div class="col-12 text-white text-center">
+                    <div>
+                        <p><?=$errori?></p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
