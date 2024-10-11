@@ -26,7 +26,5 @@
             $this->dimensione = $dimensione;
         }
         
-
-
     }
 ?>

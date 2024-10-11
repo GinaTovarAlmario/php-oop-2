@@ -43,8 +43,8 @@
         }
     
         // Getter e Setter per prezzo
-        public function getPrezzo(): float {
-            return $this->prezzo;
+        public function getPrezzo(): string {
+            return $this->prezzo ."€";
         }
     
         public function setPrezzo(float $prezzo): void {

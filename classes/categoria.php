@@ -1,14 +1,21 @@
 <?php
     class Categoria {
-        public string $titolo;
+        public string $name;
         public string $iconaUrl;
 
-        public function __construct(string $titolo,string $iconaUrl)
+        public function __construct(string $name,string $iconaUrl)
         {
-            $this->titolo = $titolo;
+            $this->name = $name;
             $this->iconaUrl = $iconaUrl;
         }
 
+        // funzione per mandare l'icona
+        public function getFavIcon() : string {
+            return $this->iconaUrl;
+        }
+        public function getName() : string {
+            return $this->name;
+        }
 
     }
 ?>

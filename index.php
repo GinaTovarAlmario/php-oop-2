@@ -18,7 +18,6 @@
     require_once __DIR__ . "/classes/gatto.php";
     require_once __DIR__ . "/classes/cane.php";
 
-
     // creo un array
     $listaProdotti = [
         new Cuccia(
@@ -30,11 +29,11 @@
             "50x18 cm"
         ),
         new Cibo(
-            "https://www.brekz.it/44262/large_default.jpg","Royal canin Instictive",
+            "https://www.brekz.it/44262/large_default.jpg",
+            "Royal canin Instictive",
             2.50,
             new Gatto(),
             true,
-            false,
             "Confezione bustine",
             true
         ),
@@ -47,8 +46,6 @@
             1.2,
             "72mm",
             true,
-            true,
-            true
         ),
         new Gioco(
             "https://www.dmail.it/on/demandware.static/-/Sites-dret-catalog/default/dw719c0a68/images_dmail/large/509459l_1.jpg",
@@ -59,15 +56,12 @@
             0.27,
             "40cm",
             false,
-            true,
-            true
         ),
         new Cibo(
             "https://www.hipetcare.it/wp-content/uploads/2022/03/HI-FISH-Adult-12-kg-16095x360-1-800x800.png",
             "Hi Fish low calories",
             69.90,
             new Cane(),
-            true,
             true,
             "Sacchetto 1.2Kg",
             true
@@ -96,7 +90,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <!-- style -->
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
     <header class="container-fluid">
@@ -112,17 +106,18 @@
                 <?php foreach( $listaProdotti as $listItem){?>
                     <div class="col-4">
                         <div class="card mt-4 mb-4 box">
-                            <img src="<?=$listItem->getImg()?>" class="card-img-top img-card" alt="<?=$listItem->getTitle();?>">
+                            <img src="<?=$listItem->getImmagine()?>" class="card-img-top img-card" alt="<?=$listItem->getTitolo();?>">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    Titolo: <?= $listItem->getTitle(); ?>
+                                    Titolo: <?= $listItem->getTitolo(); ?>
                                 </h5>
                                 <p class="card-text">
-                                    Prezzo: <?= $listItem->getPrice(); ?>
+                                    Prezzo: <?= $listItem->getPrezzo();?>
                                 </p>
-                                <p class="card-text">
-                                    Categoria: <?= $listItem->$categoria ?>
-                                </p>
+                                <div>
+                                    <h5>Categoria: </h5>
+                                    <img class="img-icon" src="<?=$listItem->getCategoria()->getFavIcon()?>" alt="<?=$listItem-> getCategoria()->getName()?>">
+                                 </div>
                             </div>
                         </div>
                     </div>
