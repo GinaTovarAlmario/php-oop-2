@@ -96,7 +96,7 @@
     <header class="container-fluid">
         <div class="row">
             <div class="col-12 text-center bg-warning">
-                <h1>PHP OOP 2 : Ereditarietà</h1>
+                <h1>ARCABOOLEAN</h1>
             </div>
         </div>
     </header>

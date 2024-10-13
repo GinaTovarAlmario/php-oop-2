@@ -3,10 +3,10 @@
 
     class Gioco extends Prodotto{
 
-        public string $materiale;
-        public float $peso;
-        public string $dimensione;
-        public bool $impermeabilità;
+        private string $materiale;
+        private float $peso;
+        private string $dimensione;
+        private bool $impermeabilità;
 
         public function __construct(
             string $immagine, 
@@ -26,17 +26,55 @@
                 $prezzo, 
                 $categoria, 
             );
-            $this->materiale = $materiale;
-            $this->peso = $peso;
-            $this->dimensione = $dimensione;
-            $this->impermeabilità =$impermeabilità;
+            $this->setMateriale($materiale);
+            $this->setPeso($peso);
+            $this->setDimensione($dimensione);
+            $this->setImpermeabilità($impermeabilità);
         }
 
+        // setters and getters
+        public function getMateriale(): string 
+        {
+            return $this->materiale;
+        }
+        public function setMateriale(string $materiale): void 
+        {
+            $this->materiale = $materiale;
+        }
+
+	    public function getPeso(): float 
+        {
+            return $this->peso;
+        }
+        public function setPeso(float $peso): void 
+        {
+            $this->peso = $peso;
+        }
+
+	    public function getDimensione(): string 
+        {
+            return $this->dimensione;
+        }
+	    public function setDimensione(string $dimensione): void 
+        {
+            $this->dimensione = $dimensione;
+        }
+
+        public function getImpermeabilità(): bool
+        {
+            return $this->impermeabilità;
+        }
+	    public function setImpermeabilità(bool $impermeabilità): void 
+        {
+            $this->impermeabilità = $impermeabilità;
+        }
+
+	
         public function getAdditionalInfo() : string {
-            return "<ul class =\"list-unstyled\"><li> Materiale : {$this->materiale}</li>
-                        <li> Peso : {$this->peso} kg</li>
-                        <li> Dimensione : {$this->dimensione}</li>
-                        <li> Impermeabilità : {$this->formatBooleanValue($this->impermeabilità)}</li>
+            return "<ul class =\"list-unstyled\"><li> Materiale : {$this->getMateriale()}</li>
+                        <li> Peso : {$this->getPeso()} kg</li>
+                        <li> Dimensione : {$this->getDimensione()}</li>
+                        <li> Impermeabilità : {$this->formatBooleanValue($this->getImpermeabilità())}</li>
                     </ul>";
         }
     }

@@ -4,9 +4,9 @@
 
     class Cibo extends Prodotto{
 
-        public bool $monoprotein;
-        public string $tipo_imballaggio;
-        public bool $lowincalories;
+        private bool $monoprotein;
+        private string $tipo_imballaggio;
+        private bool $lowincalories;
         
         public function __construct(
             string $immagine, 
@@ -24,13 +24,45 @@
                 $prezzo, 
                 $categoria, 
             );
+            $this->setMonoprotein($monoprotein);
+            $this->setTipoImballaggio($tipo_imballaggio);
+            $this->setLowincalories($lowincalories);
+        }
+
+        // settings and gettings
+
+        public function getMonoprotein(): bool 
+        {
+            return $this->monoprotein;
+        }
+        public function setMonoprotein(bool $monoprotein): void 
+        {
             $this->monoprotein = $monoprotein;
+        }
+
+
+	    public function getTipoImballaggio(): string 
+        {
+            return $this->tipo_imballaggio;
+        }
+        public function setTipoImballaggio(string $tipo_imballaggio): void 
+        {
             $this->tipo_imballaggio = $tipo_imballaggio;
+        }
+
+
+	    public function getLowincalories(): bool 
+        {
+            return $this->lowincalories;
+        }
+	    public function setLowincalories(bool $lowincalories): void 
+        {
             $this->lowincalories = $lowincalories;
         }
+	
         public function getAdditionalInfo() : string {
-            return "<ul class =\"list-unstyled\"><li> Monoproteina : {$this->formatBooleanValue($this->monoprotein)}</li>
-                        <li>Tipo Imballaggio : {$this->tipo_imballaggio}</li>
+            return "<ul class =\"list-unstyled\"><li> Monoproteina : {$this->formatBooleanValue($this->getMonoprotein())}</li>
+                        <li>Tipo Imballaggio : {$this-> getTipoImballaggio()}</li>
                         <li>Low in Calories : {$this->formatBooleanValue($this->lowincalories)}</li>
                     </ul>";
         }

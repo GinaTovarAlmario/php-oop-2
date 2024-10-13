@@ -5,8 +5,8 @@
 
         //! ho ereditato tutte le proprietà e le capacità della classe Prodotto
 
-        public $materiale;
-        public $dimensione;
+        private $materiale;
+        private $dimensione;
 
         public function __construct(
             string $immagine, 
@@ -23,13 +23,33 @@
                 $prezzo, 
                 $categoria,
             );
+            $this->setMateriale($materiale);
+            $this->setDimensione($dimensione);
+        }
+
+        // vado a fare i getter e i setter
+        public function getMateriale()
+        { 
+            return $this->materiale;
+        }
+        public function setMateriale( $materiale): void 
+        {
             $this->materiale = $materiale;
+        }
+
+	    public function getDimensione()
+        {
+            return $this->dimensione;
+        }
+
+	    public function setDimensione( $dimensione): void 
+        {
             $this->dimensione = $dimensione;
         }
-        
+    
         public function getAdditionalInfo() : string {
-            return "<ul class =\"list-unstyled\"><li> Materiale : {$this->materiale}</li>
-                        <li> Dimensione : {$this->dimensione}</li>
+            return "<ul class =\"list-unstyled\"><li> Materiale : {$this->getMateriale()}</li>
+                        <li> Dimensione : {$this->getDimensione()}</li>
                     </ul>";
         }
     }
