@@ -7,6 +7,8 @@
         private bool $monoprotein;
         private string $tipo_imballaggio;
         private bool $lowincalories;
+        protected static $tipo_di_prodotto_visualizzato = 'Cibo';
+
         
         public function __construct(
             string $immagine, 
@@ -61,7 +63,9 @@
         }
 	
         public function getAdditionalInfo() : string {
-            return "<ul class =\"list-unstyled\"><li> Monoproteina : {$this->formatBooleanValue($this->getMonoprotein())}</li>
+            return "<ul class =\"list-unstyled\">
+                        <li> Tipo di prodotto visualizzato : {$this->getTipoDiProdottoVisualizzato()}</li>
+                        <li> Monoproteina : {$this->formatBooleanValue($this->getMonoprotein())}</li>
                         <li>Tipo Imballaggio : {$this-> getTipoImballaggio()}</li>
                         <li>Low in Calories : {$this->formatBooleanValue($this->lowincalories)}</li>
                     </ul>";

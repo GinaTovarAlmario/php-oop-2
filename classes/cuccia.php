@@ -7,6 +7,7 @@
 
         private $materiale;
         private $dimensione;
+        protected static $tipo_di_prodotto_visualizzato = 'Cuccia';
 
         public function __construct(
             string $immagine, 
@@ -48,7 +49,9 @@
         }
     
         public function getAdditionalInfo() : string {
-            return "<ul class =\"list-unstyled\"><li> Materiale : {$this->getMateriale()}</li>
+            return "<ul class =\"list-unstyled\">
+                        <li> Tipo di prodotto visualizzato : {$this->getTipoDiProdottoVisualizzato()}</li>
+                        <li> Materiale : {$this->getMateriale()}</li>
                         <li> Dimensione : {$this->getDimensione()}</li>
                     </ul>";
         }

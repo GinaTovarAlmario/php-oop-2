@@ -7,6 +7,8 @@
         private float $peso;
         private string $dimensione;
         private bool $impermeabilità;
+        protected static $tipo_di_prodotto_visualizzato = 'Gioco';
+
 
         public function __construct(
             string $immagine, 
@@ -71,7 +73,9 @@
 
 	
         public function getAdditionalInfo() : string {
-            return "<ul class =\"list-unstyled\"><li> Materiale : {$this->getMateriale()}</li>
+            return "<ul class =\"list-unstyled\">
+                        <li> Tipo di prodotto visualizzato : {$this->getTipoDiProdottoVisualizzato()}</li>
+                        <li> Materiale : {$this->getMateriale()}</li>
                         <li> Peso : {$this->getPeso()} kg</li>
                         <li> Dimensione : {$this->getDimensione()}</li>
                         <li> Impermeabilità : {$this->formatBooleanValue($this->getImpermeabilità())}</li>

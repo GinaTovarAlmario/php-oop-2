@@ -19,6 +19,8 @@
         private string $titolo;
         private float $prezzo;
         private Categoria $categoria;
+        protected static $tipo_di_prodotto_visualizzato = 'Prodotto';
+
 
         public function __construct(
             string $immagine, 
@@ -26,16 +28,17 @@
             float $prezzo, 
             Categoria $categoria, 
 
+
         )   {
             // Controllo che i parametri non siano vuoti o non validi
             if (empty($immagine) || empty($titolo) || $prezzo <= 0) {
                 throw new valoriNonValidi("Valori non validi forniti al costruttore del Prodotto");
             }
 
-            $this->immagine = $immagine;
-            $this->titolo = $titolo;
-            $this->prezzo = $prezzo;
-            $this->categoria = $categoria;
+            $this->setImmagine($immagine);
+            $this->setTitolo($titolo);
+            $this->setPrezzo($prezzo);
+            $this->setCategoria($categoria);
         }
         // devo creare dei metodi getter and setter per ogni variabile
         public function getImmagine(): string {
@@ -85,7 +88,14 @@
         public function getAdditionalInfo() : string {
             return "";
         }
-       
+        
+        // per poter gestire la proprietà statica nei diversi figli di Prodotto
+        
+        public function getTipoDiProdottoVisualizzato()
+        {
+            return static::$tipo_di_prodotto_visualizzato;
+        }
+
     }
      // Esempio di utilizzo con gestione delle eccezioni
      $errori;
